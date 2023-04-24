@@ -18,7 +18,7 @@ module.exports = {
   plugins: ['react-refresh'],
   rules: {
     'react-refresh/only-export-components': 'warn',
-    'no-use-before-define': 'error',
+    'no-use-before-define': 'warn',
     // 'comma-dangle': ['error', 'never'],
     'indent': ['error', 2],
     'semi': ['error', 'always'],
