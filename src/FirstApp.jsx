@@ -7,17 +7,17 @@ export const FirstApp = ({ title, subTitle, name }) => {
       <p>{subTitle}</p>
       <p>{name}</p>
     </>
-  )
-}
+  );
+};
 
 FirstApp.propTypes = {
   title: PropTypes.string.isRequired,
   subTitle: PropTypes.string,
   name: PropTypes.string
-}
+};
 
 FirstApp.defaultProps = {
   name: 'Fernando Herrera',
   subTitle: 'No hay subtítulo',
   title: 'No hay título',
-}
+};

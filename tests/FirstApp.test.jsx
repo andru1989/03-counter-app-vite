@@ -1,5 +1,5 @@
 import { render } from '@testing-library/react';
-import { FirstApp } from "../src/FirstApp"
+import { FirstApp } from '../src/FirstApp';
 
 describe('Tests in <FirstApp />', () => {
 
@@ -11,13 +11,24 @@ describe('Tests in <FirstApp />', () => {
   // })
 
   test('should show title inside h1', () => {
-    const title = 'Hola Soy andres'
-    const { container, getByText } = render(<FirstApp title={title} />)
+    const title = 'Hola Soy andres';
+    const { getByText, getByTestId } = render(<FirstApp title={title} />);
 
-    expect(getByText(title)).toBeTruthy()
+    expect(getByText(title)).toBeTruthy();
+    expect(getByTestId('test-title').innerHTML).toContain(title);
+  });
 
-    // const h1 = container.querySelector('h1')
-    // expect(h1.innerHTML).toContain(title)
-  })
+  test('should show the subtitle sent by props', () => {
+    const title = 'Hi my name is andres';
+    const subTitle = 'Test subtitle';
+    const { getByText } = render(
+      <FirstApp
+        title={title}
+        subTitle={subTitle}
+      />
+    );
 
-})
+    expect(getByText(subTitle)).toBeTruthy();
+  });
+
+});
