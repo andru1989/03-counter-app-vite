@@ -3,13 +3,6 @@ import { FirstApp } from '../src/FirstApp';
 
 describe('Tests in <FirstApp />', () => {
 
-  // test('Match with snapshot', () => {
-  //   const title = 'Hola Soy andres'
-  //   const { container } = render(<FirstApp title={title} />)
-
-  //   expect(container).toMatchSnapshot()
-  // })
-
   test('should show title inside h1', () => {
     const title = 'Hola Soy andres';
     const { getByText, getByTestId } = render(<FirstApp title={title} />);
